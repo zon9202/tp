@@ -1,7 +1,8 @@
-echo '#!/usr/bin/env bash
-# exit on error
+#!/bin/bash
 set -o errexit
 
+python -m pip install --upgrade pip
 pip install -r requirements.txt
+
 python manage.py collectstatic --no-input
-python manage.py migrate' | Out-File -Encoding UTF8 build.sh
+python manage.py migrate
