@@ -1,5 +1,9 @@
-django
+django==5.1.6
 gunicorn
 whitenoise
 psycopg2-binary
 dj-database-url
+asginef==3.8.1
+sqlparse==0.5.3
+typing-extensions==4.12.2
+tzdata==2025.1
