@@ -2,5 +2,5 @@ services:
   - type: web
     name: tp
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r tp/requirements.txt
     startCommand: gunicorn tp.wsgi:application
