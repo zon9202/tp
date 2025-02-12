@@ -1,10 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -o errexit
-echo "Python version:"
+
+pwd
+ls
+which python
+which pip
+
 python --version
-echo "Pip version:"
 pip --version
+
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
+
 python manage.py collectstatic --no-input
 python manage.py migrate
