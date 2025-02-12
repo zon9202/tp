@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'tp.wsgi.application'
+WSGI_APPLICATION = 'tp.tp.wsgi:application'
 
 
 

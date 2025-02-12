@@ -3,7 +3,6 @@ services:
     name: tp
     env: python
     buildCommand: pip install -r tp/requirements.txt
-    startCommand: gunicorn tp.tp.wsgi:application
-
+    startCommand: gunicorn tp.wsgi:application
 
 
