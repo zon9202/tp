@@ -1,0 +1,17 @@
+<!-- templates/main/success.html -->
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="success-container">
+    <div class="success-card">
+        <div class="register-header">
+            <img src="{% static 'main/img/logo.png' %}" alt="Icon" class="register-icon">
+            <h1 class="register-title">TargetPro</h1>
+        </div>
+        <h2>Thank you for registration!</h2>
+        <p>We will contact you soon.</p>
+        <a href="{% url 'home' %}" class="back-button">Back to Home</a>
+    </div>
+</div>
+{% endblock %}

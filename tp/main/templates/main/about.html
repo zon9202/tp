@@ -1,0 +1,54 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>🚀 Services</h1>
+<div class="services-container">
+    <p>Explore our top-notch services designed to skyrocket your social media presence!</p>
+</div>
+    <div class="services-grid">
+             {% load static %}
+
+        <div class="service">
+            <img src="static/main/img/instagram.png" alt="Instagram Promotion">
+            <p>Instagram Promotion</p>
+        </div>
+        <div class="service">
+            <img src="static/main/img/tiktok.png" alt="TikTok Targeting">
+            <p>TikTok Targeting</p>
+        </div>
+        <div class="service">
+            <img src="static/main/img/instagram-stories.png" alt="Facebook Ads">
+            <p>Facebook Ads</p>
+        </div>
+        <div class="service">
+            <img src="static/main/img/youtube.png" alt="YouTube Growth">
+            <p>YouTube Growth</p>
+        </div>
+</div>
+    <h2>Why Choose Us?</h2>
+    <div class="why-choose-us">
+        <div class="choose-box">
+            <h3>Expert Team</h3>
+            <button>Certifications</button>
+            <button>Targeting</button>
+            <button>Result</button>
+            <button>Success</button>
+        </div>
+        <div class="choose-box">
+            <h3>Proven Results</h3>
+             <button>Unleash the power of Instagram with our targeted promotions that turn likes into loyal customers. Get ready to shine brighter than your competition!📈</button>
+        </div>
+        <div class="choose-box">
+            <h3>Client Reviews</h3>
+             <button>Our clients rave about us! Check out their success stories and see the magic we create together.
+              💎</button>
+        </div>
+    </div>
+
+    <p class="final-text">At TargetPro, we’re not just about social media; we’re about creating connections and driving results. Join us on this exciting journey!</p>
+ <a href="{% url 'register' %}" class="buy-button">START NOW</a>
+</div>
+{% endblock %}

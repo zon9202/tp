@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<main>
+    <div class="features">
+        <h1>Welcome to TargetPro ✨ </h1>
+        <div class="services-container">
+        <p>Transform your social media game with our expert targeting services. Let's make your brand unforgettable!</p>
+            </div>
+        <a href="{% url 'about' %}" class="button-shadow">ABOUT US</a>
+
+    </div>
+
+    <div class="content-grid">
+        {% load static %}
+        <div class="content-card">
+            <img src="{% static 'main/img/11111.jpg' %}" alt="Content Creator">
+        </div>
+        <div class="content-card">
+            <img src="{% static 'main/img/image2.jpg.jpg' %}" alt="Reel Processing">
+        </div>
+    </div>
+</main>
+{% endblock %}

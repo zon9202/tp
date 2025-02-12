@@ -1,0 +1,58 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}OUR PLANS{% endblock %}
+
+{% block content %}
+ <div class="features">
+ <h1 class="underline">OUR PLANS 💰</h1>
+
+</div>
+<div class="pricing-cards">
+        {% load static %}
+
+        <!-- Basic Plan -->
+        <div class="pricing-card">
+            <div class="price">50 $</div>
+            <div class="plan-name">BASIC</div>
+            <div class="plan-subtitle">CONSULTATION ONLY</div>
+            <ul class="features-list">
+                <li>Social Media Audit</li>
+                <li>Target Audience Analysis</li>
+                <li>Strategy Session</li>
+                <li>Action Plan</li>
+                <li>Email Support</li>
+            </ul>
+            <a href="{% url 'register' %}" class="buy-button">Buy Me</a>
+        </div>
+
+        <!-- Popular Plan -->
+        <div class="pricing-card">
+            <div class="price">199$</div>
+            <div class="plan-name">POPULAR</div>
+            <div class="plan-subtitle">CONSULTATION + MANAGEMENT</div>
+            <ul class="features-list">
+                <li>All Basic Features</li>
+                <li>Weekly Content Planning</li>
+                <li>Performance Tracking</li>
+                <li>Monthly Reports</li>
+                <li>Priority Support</li>
+            </ul>
+            <a href="{% url 'register' %}" class="buy-button">Buy Me</a>
+        </div>
+
+        <!-- Ultimate Plan -->
+        <div class="pricing-card">
+            <div class="price">499$</div>
+            <div class="plan-name">ULTIMATE</div>
+            <div class="plan-subtitle">CONSULTATION + MONTHLY</div>
+            <ul class="features-list">
+                <li>All Popular Features</li>
+                <li>Monthly Strategy Calls</li>
+                <li>Full Management</li>
+                <li>Custom Campaigns</li>
+                <li>Monthly Reports</li>
+            </ul>
+            <a href="{% url 'register' %}" class="buy-button">Buy Me</a>
+        </div>
+    </div>
+{% endblock %}

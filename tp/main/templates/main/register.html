@@ -1,0 +1,49 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Get Started {% endblock %}
+
+{% block content %}
+ <div class="features">
+<h1> Join Us 📌 </h1>
+</div>
+<div class="register-container">
+    <div class="register-card">
+        <div class="register-header">
+            <img src="{% static 'main/img/logo.png' %}" alt="Icon" class="register-icon">
+            <h1 class="register-title">TargetPro</h1>
+        </div>
+
+        {% if selected_plan %}
+        <div class="selected-plan">
+            <h3>Selected Plan: {{ selected_plan }}</h3>
+            <p>Price: ${{ plan_price }}</p>
+        </div>
+        {% endif %}
+
+        <h2 class="register-subtitle">REGISTER</h2>
+
+        <form method="post" class="register-form">
+            {% csrf_token %}
+            <input type="hidden" name="selected_plan" value="{{ selected_plan }}">
+            <input type="hidden" name="plan_price" value="{{ plan_price }}">
+
+            <div class="form-group">
+                <label>Username:</label>
+                <input type="text" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label>Mail:</label>
+                <input type="email" name="email" required>
+            </div>
+
+            <button type="submit" class="join-button">JOIN US</button>
+        </form>
+
+        <div class="register-footer">
+            © 2025 TargetPro. All rights reserved.
+        </div>
+    </div>
+</div>
+{% endblock %}
+
