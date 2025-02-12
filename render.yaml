@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: tp
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn tp.wsgi:application
