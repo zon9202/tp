@@ -1,5 +1,5 @@
-django
+echo 'django
 gunicorn
 whitenoise
 psycopg2-binary
-dj-database-url
+dj-database-url' > requirements.txt
