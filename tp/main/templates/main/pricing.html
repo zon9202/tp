@@ -3,56 +3,76 @@
 {% block title %}OUR PLANS{% endblock %}
 
 {% block content %}
- <div class="features">
- <h1 class="underline">OUR PLANS 💰</h1>
-
+<div class="features">
+    <h1 class="underline">OUR PLANS 💸</h1>
 </div>
-<div class="pricing-cards">
-        {% load static %}
 
-        <!-- Basic Plan -->
+<div class="pricing-container">
+    {% load static %}
+
+    <div class="pricing-cards">
+        <!-- План Basic -->
         <div class="pricing-card">
-            <div class="price">50 $</div>
-            <div class="plan-name">BASIC</div>
-            <div class="plan-subtitle">CONSULTATION ONLY</div>
-            <ul class="features-list">
-                <li>Social Media Audit</li>
-                <li>Target Audience Analysis</li>
-                <li>Strategy Session</li>
-                <li>Action Plan</li>
-                <li>Email Support</li>
-            </ul>
-            <a href="{% url 'register' %}" class="buy-button">Buy Me</a>
+            <div class="price-content">
+                <p class="price">$50</p>
+                <p class="plan-name">BASIC</p>
+                <p class="plan-subtitle">CONSULTATION ONLY</p>
+                <ul>
+                    <li>Social Media Audit</li>
+                    <li>Target Audience Analysis</li>
+                    <li>Strategy Session</li>
+                    <li>Action Plan</li>
+                    <li>Email Support</li>
+                </ul>
+            </div>
+            <div class="content-card">
+                <img src="{% static 'main/img/11111.jpg' %}" alt="Content Creator">
+            </div>
+            <!-- Кнопка с передачей данных о тарифе -->
+            <a href="{% url 'register' %}?plan=Basic&price=50" class="buy-button">Buy Me</a>
         </div>
 
-        <!-- Popular Plan -->
+        <!-- План Popular -->
         <div class="pricing-card">
-            <div class="price">199$</div>
-            <div class="plan-name">POPULAR</div>
-            <div class="plan-subtitle">CONSULTATION + MANAGEMENT</div>
-            <ul class="features-list">
-                <li>All Basic Features</li>
-                <li>Weekly Content Planning</li>
-                <li>Performance Tracking</li>
-                <li>Monthly Reports</li>
-                <li>Priority Support</li>
-            </ul>
-            <a href="{% url 'register' %}" class="buy-button">Buy Me</a>
+            <div class="price-content">
+                <p class="price">$199</p>
+                <p class="plan-name">POPULAR</p>
+                <p class="plan-subtitle">CONSULTATION + MANAGEMENT</p>
+                <ul>
+                    <li>All Basic Features</li>
+                    <li>Weekly Content Planning</li>
+                    <li>Performance Tracking</li>
+                    <li>Monthly Reports</li>
+                    <li>Priority Support</li>
+                </ul>
+            </div>
+            <div class="content-card">
+                <img src="{% static 'main/img/22.webp' %}" alt="Social Media Insights">
+            </div>
+            <!-- Кнопка с передачей данных о тарифе -->
+            <a href="{% url 'register' %}?plan=Popular&price=199" class="buy-button">Buy Me</a>
         </div>
 
-        <!-- Ultimate Plan -->
+        <!-- План Ultimate -->
         <div class="pricing-card">
-            <div class="price">499$</div>
-            <div class="plan-name">ULTIMATE</div>
-            <div class="plan-subtitle">CONSULTATION + MONTHLY</div>
-            <ul class="features-list">
-                <li>All Popular Features</li>
-                <li>Monthly Strategy Calls</li>
-                <li>Full Management</li>
-                <li>Custom Campaigns</li>
-                <li>Monthly Reports</li>
-            </ul>
-            <a href="{% url 'register' %}" class="buy-button">Buy Me</a>
+            <div class="price-content">
+                <p class="price">$499</p>
+                <p class="plan-name">ULTIMATE</p>
+                <p class="plan-subtitle">CONSULTATION + MONTHLY</p>
+                <ul>
+                    <li>All Popular Features</li>
+                    <li>Monthly Strategy Calls</li>
+                    <li>Full Management</li>
+                    <li>Custom Campaigns</li>
+                    <li>Monthly Reports</li>
+                </ul>
+            </div>
+            <div class="content-card">
+                <img src="{% static 'main/img/44.webp' %}" alt="Marketing Team">
+            </div>
+            <!-- Кнопка с передачей данных о тарифе -->
+            <a href="{% url 'register' %}?plan=Ultimate&price=499" class="buy-button">Buy Me</a>
         </div>
     </div>
+</div>
 {% endblock %}

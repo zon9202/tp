@@ -104,28 +104,6 @@ main .features p {
     transform: scale(1.05);
 }
 
-.content-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 50px;
-    padding: 0 20px;
-}
-
-.content-card {
-    width: 500px;
-    aspect-ratio: 4/3;
-    border-radius: 0px;
-    overflow: hidden;
-    background-color: #EE9CA7;
-}
-
-.content-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
 
 footer {
     text-align: center;
@@ -207,7 +185,7 @@ footer {
     padding: 12px 30px;
     border-radius: 25px;
     font-weight: bold;
-    margin-top: auto;
+    margin-top: 20px;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
@@ -440,4 +418,148 @@ footer {
 
 .back-button:hover {
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для карусели */
+.carousel {
+    width: 100%; /* Уменьшаем ширину карусели */
+    max-width: 900px; /* Максимальная ширина карусели */
+    margin: 0 auto; /* Выравнивание по центру */
+     padding: 20px; /* Добавляем отступы */
+}
+
+/* Стили для изображений в карусели */
+.carousel .slick-slide img {
+    width: 100%; /* Ширина 100% от контейнера */
+    height: auto; /* Сохранение пропорций */
+    max-height: 600px; /* Ограничение высоты */
+    object-fit: cover; /* Обрезка изображения, если оно слишком большое */
+    border-radius: 10px; /* Скругленные углы */
+}
+
+/* Отступы между слайдами */
+.carousel .slick-slide {
+    padding: 10px; /* Отступы между изображениями */
+}
+
+
+/* Пагинация */
+.slick-dots {
+    bottom: 10px;
+}
+
+/* Скрыть текст в кнопках стрелок */
+.slick-prev, .slick-next {
+    font-size: 0; /* Убираем текст */
+    color: transparent; /* Прячем текст */
+    background: transparent; /* Убираем фон */
+    border: none; /* Убираем границу */
+}
+
+/* Стрелки */
+.slick-prev:before, .slick-next:before {
+    font-size: 30px; /* Размер стрелок */
+    color: #EE9CA7 /* Цвет стрелок */
+    content: ''; /* Убираем текст "Next" и "Prev" */
+}
+
+/* Стрелка "Prev" слева */
+.slick-prev:before {
+    content: '←'; /* Стрелка влево */
+}
+
+/* Стрелка "Next" справа */
+.slick-next:before {
+    content: '→'; /* Стрелка вправо */
+}
+
+/* Для мобильных устройств */
+@media only screen and (max-width: 768px) {
+    .slick-prev, .slick-next {
+        font-size: 30px;
+        color: #FF7F7F;
+
+    }
+
+    .slick-dots li button:before {
+        font-size: 12px; /* Уменьшаем размер точек на мобильных */
+    }
+}
+
+/* Контейнер для всех прайс-листов */
+.pricing-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/* Индивидуальный стиль для каждого прайс-листа */
+.pricing-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    background: #9D6D6D;
+    border-radius: 15px;
+    padding: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Стили для цены */
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Стили для названия плана */
+.plan-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Стили для подзаголовка плана */
+.plan-subtitle {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Контейнер для изображения в прайсе */
+.content-card {
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Стили для изображений */
+.content-card img {
+    width: 100%; /* Изображение будет занимать 100% от блока */
+    height: auto; /* Сохраняем пропорции */
+    max-width: 300px; /* Ограничиваем ширину изображения */
+    border-radius: 10px; /* Скругленные углы */
+    object-fit: cover; /* Сохраняем покрытие изображения в пределах контейнера */
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media only screen and (max-width: 768px) {
+    .pricing-cards {
+        flex-direction: column; /* На мобильных устройствах прайсы будут располагаться по вертикали */
+        align-items: center; /* Центрируем прайсы */
+    }
+
+    .pricing-card {
+        width: 90%; /* Прайсы занимают больше места на мобильных */
+    }
+
+    .content-card img {
+        max-width: 100%; /* Изображение будет занимать всю ширину на мобильных */
+    }
 }

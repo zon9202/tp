@@ -19,8 +19,8 @@ def success_page(request):
     return render(request, 'main/success.html')
 
 def register(request):
-    selected_plan = request.GET.get('plan', '')
-    plan_price = request.GET.get('price', '')
+    selected_plan = request.GET.get('plan', '')  # Получаем выбранный план
+    plan_price = request.GET.get('price', '')  # Получаем цену
 
     if request.method == 'POST':
         # Получаем данные из формы
@@ -33,7 +33,7 @@ def register(request):
         user = User.objects.create_user(
             username=username,
             email=email,
-            password='temporary_password'  # Можно сгенерировать случайный пароль
+            password='temporary_password'  # Генерируем временный пароль
         )
 
         # Получаем IP пользователя
@@ -43,7 +43,7 @@ def register(request):
         else:
             ip = request.META.get('REMOTE_ADDR')
 
-        # Создаем профиль пользователя с IP-адресом
+        # Создаем профиль пользователя с тарифом
         UserProfile.objects.create(
             user=user,
             selected_plan=selected_plan or None,
@@ -53,8 +53,6 @@ def register(request):
 
         # Показываем сообщение об успешной регистрации
         messages.success(request, "Thank you for registration! We will contact you soon.")
-
-        # Перенаправляем на страницу успеха
         return redirect('success_page')
 
     return render(request, 'main/register.html', {

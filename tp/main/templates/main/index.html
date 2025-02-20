@@ -4,23 +4,48 @@
 
 {% block content %}
 <main>
-    <div class="features">
+    <div class="features" data-aos="fade-up">
         <h1>Welcome to TargetPro ✨ </h1>
         <div class="services-container">
         <p>Transform your social media game with our expert targeting services. Let's make your brand unforgettable!</p>
             </div>
-        <a href="{% url 'about' %}" class="button-shadow">ABOUT US</a>
+        <a href="{% url 'about' %}" class="button-shadow" data-aos="zoom-in">ABOUT US</a>
 
     </div>
 
     <div class="content-grid">
         {% load static %}
-        <div class="content-card">
-            <img src="{% static 'main/img/11111.jpg' %}" alt="Content Creator">
-        </div>
-        <div class="content-card">
-            <img src="{% static 'main/img/image2.jpg.jpg' %}" alt="Reel Processing">
-        </div>
+        <section class="carousel-section" data-aos="fade-up">
+    <div class="carousel">
+
+        <div><img src="{% static 'main/img/333.webp' %}" alt="Reel Processing"></div>
+        <div><img src="{% static 'main/img/1.webp' %}" alt="Reel Processing"></div>
+        <div><img src="{% static 'main/img/2.webp' %}" alt="Reel Processing"></div>
+        <div><img src="{% static 'main/img/3.webp' %}" alt="Reel Processing"></div>
+        <div><img src="{% static 'main/img/4.webp' %}" alt="Reel Processing"></div>
+    </div>
+</section>
+        <!-- Инициализация Slick Carousel -->
+<script>
+  $(document).ready(function(){
+    $('.carousel').slick({
+      dots: true, // Пагинация
+      infinite: true, // Бесконечный слайд
+      speed: 500, // Скорость анимации
+      slidesToShow: 2, // Показывать 2 слайда одновременно
+      slidesToScroll: 1, // Прокручивать 1 слайд за раз
+      responsive: [
+        {
+          breakpoint: 768, // Мобильная версия
+          settings: {
+            slidesToShow: 1, // На мобильных устройствах показывать 1 слайд
+          }
+        }
+      ]
+    });
+  });
+</script>
+
     </div>
 </main>
 {% endblock %}
